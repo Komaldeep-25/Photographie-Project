@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:system-ui,'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    height: 100vh;
+    background: #ffffff;
+}
+/* navbar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.header {
+    height: 5rem;
+    border-bottom: solid 1px #e1e1e1;
+    background-color: black;
+}
+
+nav {
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    padding: 0.2rem;
+    align-items: center; 
+}
+
+.left-section h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    width: 190px;
+    margin-left: 20px;
+}
+
+.right-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link {
+    list-style: none;
+    height: 100%;
+    padding: 8px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.nav-link a:hover::before {
+   width: 100%;
+}
+
+.button {
+    margin: 0;
+    background: linear-gradient(45deg, #888388, #575757);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 1s;
+}
+
+.button:hover {
+    background: linear-gradient(#e0e0e0, #04173c69);
+    color: #0c0c0c;
+}
+
+.ico {
+    margin-right: 20px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-self: flex-end;    
+}
+
+.circle-icon {
+    font-size: 20px;
+    background: #0f0f0f;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.circle-icon:hover {
+    background: #f8f6f6;
+    color: #000;
+}
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .left-section h1 {
+        font-size: 1.5rem; /* Make title responsive */
+    }
+    .nav-links {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        height: 4rem; /* Reduce header height */
+    }
+    .left-section h1 {
+        font-size: 1.2rem; /* Further adjust font size */
+        margin-left: 10px; /* Reduce left margin */
+    }
+    .nav-links {
+        font-size: 0.8rem; /* Smaller font size */
+        gap: 0.5rem; /* Reduce gap between links */
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Stack navigation vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 1rem; /* Add padding for better spacing */
+    }
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width for links */
+        gap: 0.3rem; /* Adjust gap */
+    }
+    .ico {
+        flex-direction: row; /* Keep icons in a row */
+        margin-top: 0.5rem; /* Add top margin */
+    }
+    .circle-icon {
+        font-size: 18px; /* Slightly smaller icons */
+    }
+}
+
+/* header */
+.title_lines {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+}
+.title_lines h2 {
+    font-size: 4vw;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+.title_lines:before, .title_lines:after 
+{
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 35%;
+    height: 1px;
+    content: '\a0';
+    background-color: #00979E;
+    margin-left: 15%;
+}
+.title_lines:before {
+    margin-left: -50%;
+    text-align: right;
+}
+.portfoliocontainer {
+    position: relative;
+    column-count: 2;
+    padding: 0% 10% 0% 10%;
+}
+.portfolioimage {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+.portfoliocontainer img {
+    width: 100%;
+}
+/* Responsive Styles */

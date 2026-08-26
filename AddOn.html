@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photographie</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+      }
+
+      header {
+        background: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .gallery img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .gallery-item {
+        position: relative;
+      }
+
+      .gallery-item button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: red;
+        border: none;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .gallery-item button:hover {
+        background: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Add Your Pictures</h1>
+    </header>
+
+    <div class="container">
+      <form id="uploadForm">
+        <div class="form-group">
+          <label for="imageFile">Upload an Image:</label>
+          <input type="file" id="imageFile" accept="image/*" required />
+        </div>
+        <button type="submit">Add Picture</button>
+      </form>
+
+      <div class="gallery" id="gallery"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const uploadForm = document.getElementById("uploadForm");
+        const imageFile = document.getElementById("imageFile");
+        const gallery = document.getElementById("gallery");
+
+        // Load existing images from localStorage
+        const savedImages =
+          JSON.parse(localStorage.getItem("userImages")) || [];
+        savedImages.forEach((src) => addImageToGallery(src));
+
+        // Handle form submission
+        uploadForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const file = imageFile.files[0];
+          if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+              const src = event.target.result;
+
+              // Save to localStorage
+              savedImages.push(src);
+              localStorage.setItem("userImages", JSON.stringify(savedImages));
+
+              // Add image to gallery
+              addImageToGallery(src);
+
+              // Clear the input field
+              imageFile.value = "";
+            };
+
+            reader.readAsDataURL(file);
+          }
+        });
+
+        // Function to add an image to the gallery
+        function addImageToGallery(src) {
+          const item = document.createElement("div");
+          item.classList.add("gallery-item");
+
+          const img = document.createElement("img");
+          img.src = src;
+
+          const deleteBtn = document.createElement("button");
+          deleteBtn.innerHTML = "x";
+          deleteBtn.addEventListener("click", () => {
+            item.remove();
+
+            // Remove from localStorage
+            const index = savedImages.indexOf(src);
+            if (index !== -1) {
+              savedImages.splice(index, 1);
+              localStorage.setItem("userImages", JSON.stringify(savedImages));
+            }
+          });
+
+          item.appendChild(img);
+          item.appendChild(deleteBtn);
+          gallery.appendChild(item);
+        }
+      });
+    </script>
+  </body>
+</html>

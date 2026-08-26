@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+@font-face{
+    font-family: Astoria;
+    src: url(assests/fonts/Astoria\ Classic\ Sans\ Medium/);
+}
+@font-face {
+    font-family: Averitalic;
+    src: url(assests/fonts/Aver\ Bold\ Italic.ttf);
+}
+@font-face{
+    font-family: Aver;
+    src: url(assests/fonts/Aver.ttf);
+}
+@font-face{
+    font-family: Chewie;
+    src: url(assests/fonts/ChewieDEMO-Bold.otf);
+}
+@font-face{
+    font-family: Raqillas;
+    src: url(assests/fonts/Raqillas-GOGdy.ttf);
+}
+@font-face{
+    font-family: chewieDEMO;
+    src: url(assests/fonts/ChewieDEMO-ExtraBold.otf);
+}
+@font-face{
+    font-family: chewielight;
+    src: url(assests/fonts/ChewieDEMO-Light.otf);
+}
+@font-face{
+    font-family: chewiemedium;
+    src: url(assests/fonts/ChewieDEMO-Medium.otf);
+}
+@font-face{
+    font-family: chewieregular;
+    src: url(assests/fonts/ChewieDEMO-Regular.otf);
+}
+@font-face{
+    font-family: chewieThin;
+    src: url(assests/fonts/ChewieDEMO-Thin.otf);
+}
+@font-face{
+    font-family: chewieregular;
+    src: url(assests/fonts/ChewieDEMO-SemiBold.otf);
+}
+body {
+    height: 100vh;
+    background: #ffffff;
+}
+.header {
+    height: 5rem;
+    border-bottom: solid 1px #e1e1e1;
+    background-color: rgba(65, 61, 61, 0.199);
+}
+nav {
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    padding: 0.2rem;
+    align-items: center; 
+    justify-content:space-between ;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11rem;
+    padding: 12px;
+}
+
+.left h1{
+    font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+.mid{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.mid span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.right-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-link
+ {
+    list-style: none;
+    height: 100%;
+    padding: 8px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+.nav-link  a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all .5s;
+}
+.nav-link a:hover::before{
+   width: 100%;
+}
+
+.button {
+    margin: 0%;
+    background: linear-gradient(45deg, #888388, #575757);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 1s;
+}
+.button:hover{
+    background: linear-gradient(#e0e0e0, #04173c69);
+    color: #0c0c0c;
+}
+.ico{
+    margin-right: 20px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-self: flex-end;    
+}
+.circle-icon {
+    font-size: 20px;
+    background: #0f0f0f;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.circle-icon:hover {
+    background: #f8f6f6;
+    color: #000;
+    padding: 8px;
+}
+.containerone{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    background-image: url(assests/blackcolor.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    
+    animation-name: change;
+    animation-direction: alternate-reverse;animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+@keyframes change{
+    25%{
+        background-image:url(assests/girls.jpg);
+        width: 100%;
+        height: 50%;
+        background-size: cover;  
+    }
+    50%{
+        background-image: url(assests/flowers.jpg);
+        width: 100%;
+        height: 50%;
+        background-size: cover;  
+    }
+    
+    75%{
+        background-image: url(assests/white.jpg);
+        width: 100%;
+        height: 50%;
+        background-size: cover;  
+    }
+
+    100%{
+        background-image: url(assests/blackcolor.jpg);
+        width: 100%;
+        height: 50%;
+        background-size: cover;
+    }
+}
+.text{
+    width: 96%;
+    height: 100vh;
+    padding-top: 60px;
+    padding-left: 50px;
+    color: #fff;
+    background-color:rgba(0, 0, 0, 0.443);
+}
+
+.text .ptext p{
+    width: 50%;
+    font-family: "Folty";
+    font-size: 60px;
+    text-shadow: 1px 1px 3px #000000;
+}
+.text p{
+    width: 650px;
+    font-size: large;
+    margin-bottom: 30px;
+}
+.text a{
+    font-size: 23px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.text a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+/* footer */
+.footer{
+    margin-bottom : 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #cfd2d6;
+}
+footer{
+	/* position: absolute; */
+	bottom: 0;
+	background: black;
+	height: auto;
+	width: 98.6vw;
+	padding: 40px 0 0 0;
+}
+/*content*/
+.footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.footer p{
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+/*social -media*/
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: dodgerblue;
+}
+/* copyright*/
+.footer-copyright{
+    background: #000;
+    padding: 0px 20px 50px 20px;
+}
+.footer-copyright p{
+    color: white;
+    font-size: large;
+    font-family: chewiemedium;
+    word-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+#images {
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-container {
+    width: 200px;
+    margin: 10px;
+}
+.image-container img {
+    width: 100%;
+}
+#pagination {
+    margin-top: 20px;
+}
+#pagination button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#searchQuery {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+#searchBtn {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#searchBtn i {
+    font-size: 18px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: #0056b3;
+}
+
+.masonry-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container {
+    width: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+.image-container img,
+.image-container video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 5px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#pagination button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
